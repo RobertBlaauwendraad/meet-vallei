@@ -1,7 +1,57 @@
-.banner .nav li {
-  @extend .nav-item;
+header .navbar-custom {
+  background-color: white;
+  border-bottom: 2px solid theme-color("primary");
 }
 
-.banner .nav a {
-  @extend .nav-link;
+header .navbar .nav-item a {
+  margin-right: 100px;
+  color: theme-color("text");
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 991px) {
+  header .navbar .nav-item a {
+    margin-right: 0;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+  header .navbar .nav-item a {
+    margin-right: 25px;
+    font-size: 18px;
+  }
+}
+
+header .navbar-custom .current-menu-item .nav-link,
+header .navbar-custom .nav-item:hover .nav-link {
+  color: theme-color("primary");
+}
+
+header .navbar .navbar-brand img {
+  width: 100px;
+  margin-left: 100px;
+}
+
+@media only screen and (max-width: 991px) {
+  header .navbar .navbar-brand img {
+    width: 50px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+  header .navbar .navbar-brand img {
+    width: 50px;
+    margin-left: 10px;
+  }
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(95, 177, 27)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler.navbar-toggler {
+  border-color: theme-color("line");
 }

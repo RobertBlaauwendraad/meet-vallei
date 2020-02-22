@@ -2,9 +2,8 @@
 @import "~bootstrap/scss/functions";
 
 $theme-colors: (
-  primary: #525ddc
+  primary: #5fb11b,
+  broken-white: #f4f4f4,
+  text: #3a3a3a,
+  line: #707070,
 );
-
-/** Bootstrap navbar fix (https://git.io/fADqW) */
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
