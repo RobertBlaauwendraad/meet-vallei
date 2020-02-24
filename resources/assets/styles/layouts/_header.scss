@@ -1,10 +1,19 @@
 header .navbar-custom {
   background-color: white;
   border-bottom: 2px solid theme-color("primary");
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media only screen and (max-width: 991px) {
+  header .navbar-custom {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 header .navbar .nav-item a {
-  margin-right: 100px;
+  margin-right: 92px;
   color: theme-color("text");
   font-size: 32px;
   font-weight: bold;
@@ -37,14 +46,14 @@ header .navbar .navbar-brand img {
 @media only screen and (max-width: 991px) {
   header .navbar .navbar-brand img {
     width: 50px;
-    margin-left: 10px;
+    margin-left: 0;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1119px) {
   header .navbar .navbar-brand img {
     width: 50px;
-    margin-left: 10px;
+    margin-left: 25px;
   }
 }
 
