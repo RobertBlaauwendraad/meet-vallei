@@ -98,3 +98,31 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+// Removes admin bar for non-administrators
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+    show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', 'remove_admin_bar');
+
+// Redirects to login if not logged in
+function redirect_to_login() {
+    if ( !is_user_logged_in() ) {
+        auth_redirect();
+    }
+}
+add_action( 'template_redirect', 'redirect_to_login' );
+
+// Disables dashboard for non-administators
+function disable_dashboard() { 
+    if (!is_user_logged_in()) { 
+        return null; 
+    } 
+    if (!current_user_can('administrator') && is_admin()) { 
+        wp_redirect(home_url()); 
+        exit; 
+    } 
+}
+add_action('admin_init', 'disable_dashboard');
