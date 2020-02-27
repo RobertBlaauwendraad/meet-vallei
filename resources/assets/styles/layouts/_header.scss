@@ -26,7 +26,7 @@ header .navbar .nav-item a {
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1119px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   header .navbar .nav-item a {
     margin-right: 25px;
     font-size: 18px;
@@ -34,7 +34,7 @@ header .navbar .nav-item a {
 }
 
 header .navbar-custom .current-menu-item .nav-link,
-header .navbar-custom .nav-item:hover .nav-link {
+header .navbar-custom .nav-item .nav-link:hover {
   color: theme-color("primary");
 }
 
@@ -50,7 +50,7 @@ header .navbar .navbar-brand img {
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1119px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   header .navbar .navbar-brand img {
     width: 50px;
     margin-left: 25px;

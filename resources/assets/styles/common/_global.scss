@@ -2,3 +2,39 @@ body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   background-color: theme-color("broken-white");
 }
+
+.privacy-content {
+  min-height: calc(100vh - 578px);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .privacy-content {
+    min-height: calc(100vh - 528px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy-content {
+    min-height: calc(100vh - 558px);
+  }
+}
+
+.content {
+  min-height: calc(100vh - 278px);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .content {
+    min-height: calc(100vh - 228px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    min-height: calc(100vh - 258px);
+  }
+}
+
+main {
+  margin-top: 50px;
+}

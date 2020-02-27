@@ -1,6 +1,6 @@
 <header class="banner">
     <nav id="navbar" class="navbar navbar-expand-lg navbar-custom">
-      <a class="navbar-brand" href="{{ home_url('/') }}"><img src="{{ home_url('/wp-content/uploads/2020/02/logoMV.png') }}" alt="Logo MeetVallei"></a>
+      <a class="navbar-brand" href="{{ home_url('/') }}"><img src="{{ get_field('logo', 'option') }}" alt="Logo MeetVallei"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>

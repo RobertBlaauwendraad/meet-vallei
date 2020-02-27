@@ -1,12 +1,11 @@
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   font-size: 15px;
   height: 100px;
   padding: 0;
   text-align: left;
   border-top: 5px solid theme-color("primary");
+  background-color: inherit;
 }
 
 footer .footer-brands {
@@ -51,7 +50,7 @@ footer .footer-copyright {
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1119px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   footer .footer-brands {
     margin-left: 25px;
   }
@@ -71,13 +70,13 @@ footer .footer-copyright {
   }
 }
 
-@media only screen and (max-width: 1119px) {
+@media only screen and (max-width: 1199px) {
   footer .footer-copyright {
     font-size: 20px;
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1119px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   footer .footer-copyright {
     margin-right: 25px;
   }
