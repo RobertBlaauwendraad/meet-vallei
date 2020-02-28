@@ -1,7 +1,7 @@
 {{--
   Title: Contact
   Description: Blok waar je een contactformulier + contactgegevens kunt tonen
-  Category: suiteseven
+  Category: meetvallei
   Icon: phone
   Keywords: suiteseven contact form formulier gegevens
   Align: full

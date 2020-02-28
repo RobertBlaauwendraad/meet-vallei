@@ -69,3 +69,34 @@ add_action('init', function() {
         )
     );
 });
+
+add_filter('editable_roles', function($all_roles){
+    global $pagenow;
+    if( current_user_can('dietist') && $pagenow == 'user-edit.php' ) {
+        unset($all_roles['administrator']);
+        unset($all_roles['editor']);
+        unset($all_roles['author']);
+        unset($all_roles['contributor']);
+        unset($all_roles['subscriber']);
+    }
+    return $all_roles;
+});
+
+// removes the `profile.php` admin color scheme options
+remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+        //Removes the leftover 'Visual Editor', 'Keyboard Shortcuts' and 'Toolbar' options.
+
+        add_action( 'admin_head', function () {
+
+            ob_start( function( $subject ) {
+
+                $subject = preg_replace( '#<h[0-9]>'.__("Personal Options").'</h[0-9]>.+?/table>#s', '', $subject, 1 );
+                return $subject;
+            });
+        });
+
+        add_action( 'admin_footer', function(){
+
+            ob_end_flush();
+        });     

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="privacy-content">
+    <div class="privacy-content mt-3">
     @while(have_posts()) @php the_post() @endphp
         @include('partials.content-page')
     @endwhile

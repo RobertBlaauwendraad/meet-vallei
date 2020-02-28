@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-xl-auto ml-auto d-none d-xl-flex align-items-center">
+{{-- <div class="col-xl-auto ml-auto d-none d-xl-flex align-items-center">
     <form id="search" class="search-form" role="search" method="get" action="{{ home_url( '/' ) }}">
         <div class="input-group">
             <input id="autocomplete" class="search-field form-control" type="search"
@@ -15,7 +15,7 @@
             <div class="results"></div>
         </div>
     </form>
-</div>
+</div> --}}
     <table>
         <tr>
             <th>
