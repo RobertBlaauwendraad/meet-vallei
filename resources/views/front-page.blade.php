@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@if($_SERVER['REQUEST_METHOD'] == 'POST')
+@if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['profile']))
   @php
-    if(!isset($profilerHandler)){
+    if(!isset($profileHandler)){
       $profileHandler = new App\Controllers\profileHandler();
     }
     $profileHandler->handleProfile();
@@ -10,9 +10,14 @@
 @endif
 
 @section('content')
-  <div class="row justify-content-end">
-    <div class="col-1">
-      <button id="settings" type="button" class="btn"><i class="fas fa-user-cog"></i></button>
+  <div class="row justify-content-end mt-3">
+    <div class="col-auto">
+      <button id="settings" type="button" class="btn">
+        <svg class="bi bi-pencil" width="36" height="36" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM14 4l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"></path>
+          <path fill-rule="evenodd" d="M14.146 8.354l-2.5-2.5.708-.708 2.5 2.5-.708.708zM5 12v.5a.5.5 0 00.5.5H6v.5a.5.5 0 00.5.5H7v.5a.5.5 0 00.5.5H8v-1.5a.5.5 0 00-.5-.5H7v-.5a.5.5 0 00-.5-.5H5z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
   </div>
 <div id="modal" class="modal">
@@ -43,12 +48,12 @@
               <input type="hidden" name="names[]" value="{{ $name }}">
             @endif
           @endfor  
-        <button type="submit" class="btn btn-primary">Bevestigen</button>
+        <button type="submit" name="profile" class="btn btn-primary">Bevestigen</button>
         </form>
       @endif
     @endwhile
       <form action="{{ site_url( 'wp-login.php?action=logout') }}">
-        <button type="submit" class="btn btn-danger">{{ __('Uitloggen', 'meetvallei') }}</button>
+        <button type="submit" class="btn btn-danger mb-5">{{ __('Uitloggen', 'meetvallei') }}</button>
     </form>
   </div>
 </div>

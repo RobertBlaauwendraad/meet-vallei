@@ -9,7 +9,7 @@
 
           @if (!have_posts())
             @component('components.alert', ['type' => 'alert-warning'])
-              {{  __('Helaas, er is niets gevonden.', 'meetvallei') }}
+              {{  __('Helaas, er is niets gevonden.', 'suiteseven') }}
             @endcomponent
             {!! get_search_form(false) !!}
           @endif
@@ -18,6 +18,7 @@
             @include('components.card-search')
           @endposts
 
+          @include('components.pagination')
         </div>
       </div>
     </div>

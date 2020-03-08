@@ -78,8 +78,14 @@
                         "id": ""
                     },
                     "choices": {
+                        "Energie": "Energie",
+                        "Vetten": "Vetten",
+                        "Verzadigd-vet": "Verzadigd-vet",
                         "Koolhydraten": "Koolhydraten",
-                        "Eiwitten": "Eiwitten"
+                        "Suiker": "Suiker",
+                        "Vezels": "Vezels",
+                        "Eiwitten": "Eiwitten",
+                        "Natrium": "Natrium"
                     },
                     "allow_custom": 0,
                     "default_value": [],
@@ -87,6 +93,93 @@
                     "toggle": 0,
                     "return_format": "value",
                     "save_custom": 0
+                },
+                {
+                    "key": "field_5e63a143311d8",
+                    "label": "Energie Doel",
+                    "name": "Energie",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Energie"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5e63a193311da",
+                    "label": "Vetten Doel",
+                    "name": "Vetten",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Vetten"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5e63a19f311de",
+                    "label": "Verzadigd-vet Doel",
+                    "name": "Verzadigd-vet",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Verzadigd-vet"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
                 },
                 {
                     "key": "field_5e56ecdbdabbf",
@@ -101,6 +194,64 @@
                                 "field": "field_5e56e3ff5b97a",
                                 "operator": "==",
                                 "value": "Koolhydraten"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5e63a19c311dd",
+                    "label": "Suiker Doel",
+                    "name": "Suiker",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Suiker"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5e63a19a311dc",
+                    "label": "Vezels Doel",
+                    "name": "Vezels",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Vezels"
                             }
                         ]
                     ],
@@ -145,6 +296,35 @@
                     "min": 0,
                     "max": "",
                     "step": ""
+                },
+                {
+                    "key": "field_5e63a199311db",
+                    "label": "Natrium Doel",
+                    "name": "Natrium",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e56e3ff5b97a",
+                                "operator": "==",
+                                "value": "Natrium"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
                 }
             ]
         }
@@ -171,5 +351,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582811769
+    "modified": 1583590072
 }

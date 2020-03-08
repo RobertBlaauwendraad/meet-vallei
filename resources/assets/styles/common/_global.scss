@@ -3,34 +3,38 @@ body {
   background-color: theme-color("broken-white");
 }
 
+.pie-chart {
+  padding: 0 !important;
+}
+
 .privacy-content {
-  min-height: calc(100vh - 528px);
+  min-height: calc(100vh - 544px);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
   .privacy-content {
-    min-height: calc(100vh - 478px);
+    min-height: calc(100vh - 494px);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .privacy-content {
-    min-height: calc(100vh - 508px);
+    min-height: calc(100vh - 524px);
   }
 }
 
 .content {
-  min-height: calc(100vh - 228px);
+  min-height: calc(100vh - 244px);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
   .content {
-    min-height: calc(100vh - 178px);
+    min-height: calc(100vh - 194px);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .content {
-    min-height: calc(100vh - 208px);
+    min-height: calc(100vh - 224px);
   }
 }

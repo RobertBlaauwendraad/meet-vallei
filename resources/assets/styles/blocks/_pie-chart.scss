@@ -84,7 +84,7 @@ $primary-color-orange-dark: #e08833;
   }
   // bigger size
   &.big {
-    font-size: 310px;
+    font-size: 280px;
   }
   // smaller size
   &.small {
@@ -182,23 +182,6 @@ $primary-color-orange-dark: #e08833;
   @for $j from 101 through 500 {
     &.p#{$j} .bar {
       border: $circle-width solid theme-color("primary-red");
-    }
-  }
-  // hover styles
-  &:hover {
-    cursor: default;
-    > span {
-      width: 320px;
-      line-height: 320px;
-      font-size: 0.3em;
-      color: $primary-color;
-    }
-
-    &::after {
-      top: $circle-width-hover;
-      left: $circle-width-hover;
-      width: 1 - (2 * $circle-width-hover);
-      height: 1 - (2 * $circle-width-hover);
     }
   }
 }

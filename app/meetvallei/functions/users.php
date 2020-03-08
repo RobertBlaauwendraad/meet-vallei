@@ -47,27 +47,49 @@ add_action('init', function() {
         __( 'Diëtist(e)', 'meetvallei'),
         array(
             'read' => true,
+            // Users
             'list_users' => true,
             'create_users' => true,
             'edit_users' => true,
             'promote_users' => true,
             'delete_users' => true,
+            // Producten
             'read_product' => true,
             'read_producten' => true,
             'edit_product' => true,
-            'read_product' => true,
-            'delete_product' => true,
             'edit_producten' => true,
             'edit_others_producten' => true,
+            'delete_product' => true,
+            'delete_producten' => true,
             'publish_producten' => true,
             'read_private_producten' => true,
-            'edit_producten' => true,
+            // Productgroepen
             'manage_productgroepen' => true,
             'edit_productgroepen' => true,
             'delete_productgroepen' => true,
             'assign_productgroepen' => true,
         )
     );
+});
+
+// Edits admin role
+add_action( 'admin_init', function(){
+    $admins = get_role( 'administrator' );
+    
+    $admins->add_cap( 'read_product' );
+    $admins->add_cap( 'read_producten' );
+    $admins->add_cap( 'edit_product' );
+    $admins->add_cap( 'edit_producten' );
+    $admins->add_cap( 'edit_others_producten' );
+    $admins->add_cap( 'delete_product' );
+    $admins->add_cap( 'delete_producten' );
+    $admins->add_cap( 'publish_producten' );
+    $admins->add_cap( 'read_private_producten' );
+
+    $admins->add_cap( 'manage_productgroepen' );
+    $admins->add_cap( 'edit_productgroepen' );
+    $admins->add_cap( 'delete_productgroepen' );
+    $admins->add_cap( 'assign_productgroepen' );
 });
 
 add_filter('editable_roles', function($all_roles){

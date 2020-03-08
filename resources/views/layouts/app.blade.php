@@ -14,6 +14,5 @@
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp
-    <script src="https://kit.fontawesome.com/62e1201a15.js" crossorigin="anonymous"></script>
   </body>
 </html>

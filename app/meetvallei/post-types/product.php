@@ -47,13 +47,15 @@ add_action('init', function(){
         'show_in_rest'		  => true,
         'show_ui'             => true,
         'capabilities' => array(
+            'read_post' => 'read_product',
+            'read_posts' => 'read_producten',
             'edit_post' => 'edit_product',
             'edit_posts' => 'edit_producten',
-            'edit_others_posts' => 'edit_other_producten',
+            'edit_others_posts' => 'edit_others_producten',
+            'delete_post' => 'delete_product',
+            'delete_posts' => 'delete_producten',
             'publish_posts' => 'publish_producten',
-            'read_post' => 'read_product',
             'read_private_posts' => 'read_private_producten',
-            'delete_post' => 'delete_product'
         ),
         'map_meta_cap' => true
     );

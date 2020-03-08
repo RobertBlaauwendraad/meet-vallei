@@ -32,6 +32,7 @@ $MeetVallei = [
   'gutenberg/sage-acf-gutenberg-blocks', // overwrite of MWdelaney composer package for registering custom ACF block
   'gutenberg/categories', // register custom block category
   'gutenberg/colors', // custom gutenberg colors
+  'gutenberg/default_block',
 ];
 
 array_map(function ($file) {

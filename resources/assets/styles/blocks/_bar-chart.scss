@@ -3,7 +3,7 @@
   table-layout: fixed;
   width: 60%;
   max-width: 300px;
-  height: 150px;
+  height: 200px;
   margin: 0 auto;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 2%, transparent 2%);
   background-size: 100% 50px;
@@ -13,7 +13,7 @@
     position: relative;
     display: table-cell;
     vertical-align: bottom;
-    height: 150px;
+    height: 200px;
     background-image: linear-gradient(theme-color("primary-red") 1%, transparent 1%);
   }
   
