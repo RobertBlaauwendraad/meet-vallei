@@ -1,0 +1,97 @@
+#search {
+  position: relative;
+}
+
+.foil {
+  display: none;
+  position: absolute;
+  background: theme-color('white');
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  //min-height: rem-calc(200);
+
+  .autocomplete-suggestions {
+    background: theme-color('white');
+    display: block !important;
+  }
+
+  .autocomplete-suggestion {
+    overflow: auto;
+    position: relative !important;
+    text-align: left;
+    width: 100% !important;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(theme-color('primary'), 0.25);
+    padding: rem-calc(10);
+    cursor: pointer;
+
+    &.autocomplete-selected {
+      //background: rgba(theme-color('black'), 0.1);
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: rem-calc(8);
+      background: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: rem-calc(8);
+      background: none;
+      margin: rem-calc(10 0);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: rem-calc(8);
+      background: rgba(theme-color('primary'), 0.6);
+    }
+  }
+
+  .suggestion {
+    position: relative;
+  }
+
+  a {
+    color: $body-color;
+    display: block;
+    overflow-x: hidden;
+    padding-right: rem-calc(80);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    @include hover-focus {
+      text-decoration: none;
+      color: theme-color('primary');
+    }
+  }
+
+  .autocomplete-selected a,
+  .autocomplete-selected span,
+  a:hover,
+  a:focus {
+    color: theme-color('primary');
+  }
+
+  span.type {
+    @include font-size($font-size-sm);
+
+    border: 1px solid rgba(theme-color('primary'), 0.46);
+    padding: 0 rem-calc(8);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    align-items: center;
+    display: flex;
+  }
+
+  .autocomplete-no-suggestion {
+    padding: rem-calc(10);
+  }
+}

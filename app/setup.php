@@ -23,6 +23,12 @@ add_action('wp_enqueue_scripts', function () {
  * Theme setup
  */
 add_action('after_setup_theme', function () {
+
+    /**
+     * Load theme textdomain 'sage' from lang directory to make the theme translateable
+     */
+    load_theme_textdomain('sage', get_template_directory() . '/lang');
+
     /**
      * Enable features from Soil when plugin is activated
      * @link https://roots.io/plugins/soil/
@@ -64,6 +70,13 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Gutenberg support
+     * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+     */
+    add_theme_support('editor-styles');
+    add_theme_support('align-wide');
 
     /**
      * Use main stylesheet for visual editor

@@ -1,10 +1,21 @@
 <header class="banner">
-  <div class="container">
-    <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
-    <nav class="nav-primary">
-      @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-      @endif
-    </nav>
-  </div>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand" href="{{ home_url('/') }}"><img src="{{ get_field('logo', 'option') }}" alt="Logo MeetVallei"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        @if(has_nav_menu('primary_navigation'))
+        {!! wp_nav_menu(
+          [
+            'theme_location'    => 'primary_navigation',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse flex-grow-1 text-center',
+            'container_id'      => 'navbarNav',
+            'menu_class'        => 'navbar-nav ml-auto flex-nowrap',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+            ]) !!}
+        @endif
+  </nav>
 </header>

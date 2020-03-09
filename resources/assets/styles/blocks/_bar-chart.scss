@@ -1,0 +1,43 @@
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 60%;
+  max-width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 2%, transparent 2%);
+  background-size: 100% 50px;
+  background-position: left top;
+  
+  li {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 200px;
+    background-image: linear-gradient(theme-color("primary-red") 1%, transparent 1%);
+  }
+  
+  .amount {
+    margin: 0 0.5em;
+    display: block;
+    background: rgba(theme-color("primary"), .75);
+    animation: draw 1s ease-in-out;
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 5px 1em 0;
+      display: block;
+      content: attr(title);
+      word-wrap: break-word;
+      font-size: 24px;
+    }
+  }
+}
+
+@keyframes draw {
+  0% { height: 0; }
+}

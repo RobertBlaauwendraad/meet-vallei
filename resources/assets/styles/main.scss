@@ -13,9 +13,14 @@
 
 /** Import theme styles */
 @import "common/global";
+@import "common/fonts";
+@import "blocks/bar-chart";
+@import "blocks/pie-chart";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
+@import "components/tables";
+@import "components/autocomplete";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";

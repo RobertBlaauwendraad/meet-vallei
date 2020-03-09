@@ -1,0 +1,187 @@
+/****************************************************************
+ *
+ * CSS Percentage Circle
+ * Author: Andre Firchow/ Vikas
+ *
+*****************************************************************/
+
+//transform rotate
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+// Compass utilities
+// @import "compass";
+// VARS
+$circle-width: 0.08em;
+$circle-width-hover: 0.04em;
+// colors default
+$primary-color: theme-color("primary");
+$secondary-color: #ededed;
+$bg-color: #fff;
+$primary-color-green: #4db53c;
+$primary-color-orange: #dd9d22;
+// colors dark skin
+$primary-color-dark: #c6ff00;
+$secondary-color-dark: #777;
+$bg-color-dark: #666;
+$primary-color-green-dark: #5fd400;
+$primary-color-orange-dark: #e08833;
+// CIRCLE
+// classes 2 extend
+.rect-auto {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.pie {
+  position: absolute;
+  border: $circle-width solid $primary-color;
+  width: 1 - (2 * $circle-width);
+  height: 1 - (2 * $circle-width);
+  clip: rect(0, 0.5em, 1em, 0);
+  border-radius: 50%;
+
+  @include rotate(0);
+}
+
+.pie-fill {
+  @include rotate(180deg);
+}
+
+// .pie:before {
+//   left: -3px;
+// }
+// .pie:after {
+//   right: -3px;
+// }
+// main
+.c100 {
+  *,
+  *::before,
+  *::after {
+    // @include box-sizing(content-box);
+    box-sizing: content-box;
+  }
+
+  box-shadow: inset 1px 1.7px 6px 0 rgba(0, 0, 0, 0.06);
+  position: relative;
+  font-size: 120px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  // float: left;
+  margin: 0 0.1em 0.1em 0;
+  margin: 0 auto;
+  background-color: $secondary-color;
+  // center circle to its parent
+  &.center {
+    float: none;
+    margin: 0 auto;
+  }
+  // bigger size
+  &.big {
+    font-size: 270px;
+  }
+  // smaller size
+  &.small {
+    font-size: 80px;
+  }
+  // centered value inside circle
+  > span {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: -20px;
+    // width: 320px;
+    line-height: 320px;
+    font-size: 0.2em;
+    color: $secondary-color;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    // @include transition-property(all);
+    // @include transition-duration(0.2s);
+    // @include transition-timing-function(ease-out);
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    background: theme-color("text");
+    // background: -webkit-linear-gradient(left, #563490, #ee3656);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  // background inside the circle
+  &::after {
+    position: absolute;
+    top: $circle-width;
+    left: $circle-width;
+    display: block;
+    content: " ";
+    border-radius: 50%;
+    background-color: $bg-color;
+    width: 1 - (2 * $circle-width);
+    height: 1 - (2 * $circle-width);
+    // @include transition-property(all);
+    // @include transition-duration(0.2s);
+    // @include transition-timing-function(ease-in);
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
+  // the slice (mask)
+  .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0, 1em, 1em, 0.5em);
+  }
+  // circle to show the status
+  .bar {
+    @extend .pie;
+  }
+  // loop to create all needed elements automatically
+  @for $j from 51 through 100 {
+    &.p#{$j} .slice {
+      @extend .rect-auto;
+    }
+    &.p#{$j} .bar::after {
+      @extend .pie-fill;
+    }
+    &.p#{$j} .fill {
+      @extend .pie;
+      @extend .pie-fill;
+    }
+  }
+  // loop to rotate all 100 circles
+  @for $j from 1 through 100 {
+    &.p#{$j} .bar {
+      @include rotate((360/100*$j) + deg);
+    }
+  }
+  // over 100
+  @for $j from 101 through 500 {
+    &.p#{$j} .slice {
+      @extend .rect-auto;
+    }
+    &.p#{$j} .bar::after {
+      @extend .pie-fill;
+    }
+    &.p#{$j} .fill {
+      @extend .pie;
+      @extend .pie-fill;
+
+      border: $circle-width solid theme-color("primary-red");
+    }
+  }
+  // loop to rotate all 400 circles
+  @for $j from 101 through 500 {
+    &.p#{$j} .bar {
+      border: $circle-width solid theme-color("primary-red");
+    }
+  }
+}

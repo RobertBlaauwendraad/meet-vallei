@@ -13,11 +13,6 @@ add_filter('body_class', function (array $classes) {
         }
     }
 
-    /** Add class if sidebar is active */
-    if (display_sidebar()) {
-        $classes[] = 'sidebar-primary';
-    }
-
     /** Clean up class names for custom templates */
     $classes = array_map(function ($class) {
         return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
@@ -65,27 +60,3 @@ add_filter('template_include', function ($template) {
     }
     return $template;
 }, PHP_INT_MAX);
-
-/**
- * Render comments.blade.php
- */
-add_filter('comments_template', function ($comments_template) {
-    $comments_template = str_replace(
-        [get_stylesheet_directory(), get_template_directory()],
-        '',
-        $comments_template
-    );
-
-    $data = collect(get_body_class())->reduce(function ($data, $class) use ($comments_template) {
-        return apply_filters("sage/template/{$class}/data", $data, $comments_template);
-    }, []);
-
-    $theme_template = locate_template(["views/{$comments_template}", $comments_template]);
-
-    if ($theme_template) {
-        echo template($theme_template, $data);
-        return get_stylesheet_directory().'/index.php';
-    }
-
-    return $comments_template;
-}, 100);

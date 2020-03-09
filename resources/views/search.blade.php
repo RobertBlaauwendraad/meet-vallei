@@ -1,18 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+  <section class="search-page py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h1 class="pb-4">{!! App::title() !!}</h1>
 
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
+          @if (!have_posts())
+            @component('components.alert', ['type' => 'alert-warning'])
+              {{  __('Helaas, er is niets gevonden.', 'suiteseven') }}
+            @endcomponent
+            {!! get_search_form(false) !!}
+          @endif
+
+          @posts
+            @include('components.card-search')
+          @endposts
+
+          @include('components.pagination')
+        </div>
+      </div>
     </div>
-    {!! get_search_form(false) !!}
-  @endif
-
-  @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-search')
-  @endwhile
-
-  {!! get_the_posts_navigation() !!}
+  </section>
 @endsection
