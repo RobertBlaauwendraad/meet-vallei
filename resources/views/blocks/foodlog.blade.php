@@ -11,6 +11,7 @@
 @php
     global $wpdb;
     $userid = get_current_user_id();
+    $user="user_".$userid ;
     $date = date("Ymd");
     $Energie = 0;
     $Vetten = 0;
@@ -49,7 +50,7 @@
 
 @component('components.block', ['block' => $block])
 <div class="row justify-content-center">
-    <div class="col">
+    <div class="col mt-3">
         @if ($results)
             <ul class="list-group">
                 <h3>Vandaag</h3>
@@ -66,11 +67,6 @@
                                 <button type="submit" name="deleteproduct" value="{{ $listid }}" class="btn btn-danger ml-3"><i class="fas fa-times"></i></button>
                             </li>
                     </form>
-
-                    @php 
-                        $user="user_".$userid ;
-
-                    @endphp
                     @while( have_rows('voedingsstoffen', $user )) @php the_row() @endphp
                         @php $count = count(get_sub_field('voedingsstoffenSelect', $user)) @endphp
                         @for ($i = 0; $i < $count; $i++)
@@ -84,10 +80,15 @@
                 @endforeach
             </ul>
             @else
-                Je hebt vandaag nog niks toegevoegd!
+            <ul class="list-group">
+                <h3>Vandaag</h3>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Je hebt vandaag nog niks toegevoegd!
+                </li>
+            </ul>
         @endif
     </div>
-    <div class="col">
+    <div class="col mt-3">
         @while( have_rows('voedingsstoffen', $user )) @php( the_row() )
             @php($count = count(get_sub_field('voedingsstoffenSelect', $user)))
             <ul class="list-group"> 
