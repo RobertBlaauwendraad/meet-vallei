@@ -6,5 +6,5 @@
         @include('partials.content-page')
     @endwhile
     </div>
-  <img src="{{ home_url('/wp-content/uploads/2020/02/Group-21.png') }}" alt="Cookiemonster" class="cookiemonster">
+  <img src="{{ home_url('/wp-content/uploads/2020/03/Group-21.png') }}" alt="Cookiemonster" class="cookiemonster">
 @endsection
