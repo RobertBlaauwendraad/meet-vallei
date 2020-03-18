@@ -50,7 +50,7 @@
 
 @component('components.block', ['block' => $block])
 <div class="row justify-content-center">
-    <div class="col mt-3">
+    <div class="col-md col-12 mt-3">
         @if ($results)
             <ul class="list-group">
                 <h3>Vandaag</h3>
@@ -88,7 +88,7 @@
             </ul>
         @endif
     </div>
-    <div class="col mt-3">
+    <div class="col-md col-12 mt-3">
         @while( have_rows('voedingsstoffen', $user )) @php( the_row() )
             @php($count = count(get_sub_field('voedingsstoffenSelect', $user)))
             <ul class="list-group"> 
