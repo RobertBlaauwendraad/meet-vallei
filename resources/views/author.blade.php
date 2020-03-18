@@ -89,7 +89,7 @@
             <ul class="list-group">
                 <h3>Vandaag</h3>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Je hebt vandaag nog niks toegevoegd!
+                    Er is vandaag nog niks toegevoegd!
                 </li>
             </ul>
         @endif
